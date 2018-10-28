@@ -1,0 +1,6 @@
+A data frame is a special case of a list, with the object consisting of
+a list of vectors, which are the columns of the data frame.  So, its
+length is the number of columns.  On the other hand, a matrix is a
+special case of a vector, with the matrix columns stored in column-major
+order.  Hence its length is the product of the number of rows and the
+number of columns.

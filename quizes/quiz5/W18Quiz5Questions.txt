@@ -1,0 +1,97 @@
+
+DESCRIPTION
+
+Students:  Please keep in mind the OMSI rules.  Save your files often,
+make sure OMSI fills your entire screen at all times, etc.  Remember
+that clicking CopyQtoA will copy the entire question box to the end of
+the answer box.  
+
+***********************************************************************
+
+Don't forget to FREQUENTLY save and submit your work, even work    
+in progress.  The network may get busy at the end of the exam      
+period, making it difficult to submit then.  The server will shut 
+down at the appointed time, and NO further work will be accepted.
+
+**********************************************************************
+
+In questions involving code which will PARTIALLY be given to you in the
+question specs, you need to add new code.  There may not be information
+given as to where the new cod should be inserted.  Do not modify the
+lines already there unless instructed to do so.
+
+If a question includes test code, make sure to INCLUDE IT IN YOUR
+SUBMISSION.
+
+IF YOU FINISH EARLY, please leave the exam room.  If you stay, close
+your laptop and sit quietly.
+
+QUESTION -ext .R -run 'Rscript omsi_answer1.R'
+
+Consider R's built-in dataset 'faithful', a 2-column data frame whose
+first few rows are
+
+  eruptions waiting
+1     3.600      79
+2     1.800      54
+3     3.333      74
+4     2.283      62
+5     4.533      85
+6     2.883      55
+
+The data are for the famous geyser, Old Faithful in Yellowstone National
+Park.  The first column gives the duration of an eruption, and the
+second has the time between that eruption and the previous one.
+
+Write code to print (a) the number of eruptions of duration more than
+3.25, and (b) the mean eruption duration among eruptions occurring after a
+wait time of more than 65.  (Quantity (b) is motivated by the notion
+that longer waits imply more water accumulates and thus longer
+eruptions.)  For full credit, your code must be loopless.
+
+print('number of durations > 3.25:')
+print(             )
+print('mean eruption duration for waits > 65:')
+print(             )
+
+QUESTION -ext .R -run 'Rscript omsi_answer2.R'
+
+Write code to create a class 'vecPos', objects of which are vectors with
+all positive elements.  Part of your code will be a function
+'makeVecPos(x)' that inputs a plain vector x of all positive elements
+and returns an object of class 'vecPos' (with the same elements); it
+will report an error if the input is not all positive.  You will also
+overload '>' so that one object of the class is considered greater than
+another if and only if each element in the first object is greater than
+the corresponding element in the second object.  For full credit, your
+code must be loop-free.
+
+Note: You may need to call as.vector() to convert your 'vecPos' object
+to a plain vector.
+
+makeVecPos <- function(x)
+{
+
+
+}
+
+u <- c(5,12,13)
+v <- c(1,88,8)
+w <- c(2,11,11)
+uvp <- makeVecPos(u)
+vvp <- makeVecPos(v)
+wvp <- makeVecPos(w)
+print(uvp)
+print(uvp > vvp)  # prints FALSE
+print(uvp > wvp)  # prints TRUE
+
+try:
+  {
+  z <- c(0,88,8)
+  zvp <- makeVecPos(z)  # causes error, with msg "must be all-positive"
+  # OMSI will report "Run unsuccessful," but don't worry :-)
+  }
+
+
+
+

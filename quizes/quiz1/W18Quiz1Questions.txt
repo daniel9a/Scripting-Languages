@@ -1,0 +1,86 @@
+
+
+DESCRIPTION
+
+Students:  Please keep in mind the OMSI rules.  Save your files often,
+make sure OMSI fills your entire screen at all times, etc.  Remember
+that clicking CopyQtoA will copy the entire question box to the answer
+box.
+
+In questions involving code which will PARTIALLY be given to you in the
+question specs, you may need add new lines.  There may not be
+information given as to where the lines should be inserted.
+
+MAKE SURE TO RUN THE CODE IN PROBLEMS THAT INVOLVING CODE!
+
+QUESTION -ext .py -run 'python omsi_answer1.py'
+
+The Python function below prepends multiple copies of a given
+character string to a given initial string, returning the result.
+
+For full credit, your code must have no loops.
+
+Complete the code:
+
+def prepend(x,s,n):
+
+a = 'abc'
+print prepend(a,'88',3)  # prints '888888abc'
+
+QUESTION -ext .py -run 'python omsi_answer2.py'
+
+This problem will involve a modification of the 'textfile' example
+beginning on p.26.  Specifically, you will add code so that the class
+includes an instance variable 'myrank'.  The first object 
+that is created of this class will have rank 1, the second one created
+will have rank 2, etc.  Add code as appropriate below.
+
+class textfile:
+   ntfiles = 0  
+   def __init__(self,fname):
+      textfile.ntfiles += 1
+      self.name = fname  
+      self.fh = open(fname)  
+      self.lines = self.fh.readlines()
+      self.nlines = len(self.lines)  
+      self.nwords = 0
+      # omitting wordcount(), grep() for brevity
+
+# create test files x and y
+f = open('x','w')
+f.write('abc\nde\n')
+f = open('y','w')
+f.write('12\n888\n')
+a = textfile('x')
+b = textfile('y')
+print a.myrank  # prints 1
+print b.myrank  # prints 2
+
+QUESTION -ext .py -run 'python omsi_answer3.py'
+
+Here you will write a function 'uniq' that eliminates duplicate values
+in a list, and returns the result.  The original order of the list
+elements are retained.  For full credit, your code must have at most 
+one loop.  Add code as appropriate:
+
+def uniq(x):
+
+u = [5,12,13,12,8]
+print uniq(u)
+
+QUESTION -ext .py -run 'python omsi_answer4.py'
+
+Here you will write a class 'ulist', which will be a derived class of
+Python's built-in 'list' class.  Instances of that class will be lists
+that have no duplicate elements.  The actual list will be in an instance
+variable x.  Add code as appropriate:
+
+def uniq(x):  # copy from the previous problem (must be defined again)
+
+class ulist(list):
+
+u = [5,12,13,12,8]
+u1 = ulist(u)
+v1 = u1 + [2,1,8]
+print v1.x  # prints [5,12,13,8,2,1]
+

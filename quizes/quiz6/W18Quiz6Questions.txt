@@ -1,0 +1,97 @@
+
+DESCRIPTION
+
+Students:  Please keep in mind the OMSI rules.  Save your files often,
+make sure OMSI fills your entire screen at all times, etc.  Remember
+that clicking CopyQtoA will copy the entire question box to the answer
+box.  
+
+***********************************************************************
+*                                                                     *
+*  Don't forget to FREQUENTLY save and submit your work, even work    *
+*  in progress.  The network may get busy at the end of the exam      *
+*  period, making it difficult to submit then.  The server will shut  *
+*  down at the appointed time, and NO further work will be accepted.  *
+*                                                                     *
+**********************************************************************
+
+In questions involving code which will PARTIALLY be given to you in the
+question specs, you need to add new lines.  There may not be information
+given as to where the lines should be inserted.  Do not modify the lines
+already there unless instructed to do so.
+
+If a question includes test code, make sure to include it in your
+submission.
+
+IF YOU FINISH EARLY, please leave the exam room.  If you stay, close
+your laptop and sit quietly.
+
+QUESTION 
+
+Consider this R session:
+
+> head(faithful)
+  eruptions waiting
+1     3.600      79
+2     1.800      54
+3     3.333      74
+4     2.283      62
+5     4.533      85
+6     2.883      55
+> nrow(faithful); ncol(faithful)
+[1] 272
+[1] 2
+> class(faithful)
+[1] "data.frame"
+> length(faithful)
+[1] 2
+> length(as.matrix(faithful))
+[1] 544
+
+Explain in detail the reason for the values of the two lengths.
+
+QUESTION -ext .R -run 'Rscript omsi_answer2.R'
+
+Write function whose arguments are a matrix m and positive integer k,
+that returns a vector whose i-th element is the k-th largest value in
+row i of m.  (The 1-st largest is the max, etc.)  For full credit, your
+code must be loop-free.
+
+findAllKths <- function(m,k) 
+{
+
+}
+
+m <- matrix(c(5,8,2,6,9,12,1,4,16,1,18,5),nrow=4)
+print(findAllKths(m,2)) # 9,8,2,5
+
+QUESTION -ext .R -run 'Rscript omsi_answer3.R'
+
+Alter the code for MachRep.R, enclosed below, so that it prints out one
+additional piece of information:  The proportion of machine breakdowns
+that acquire repair service immediately, rather than having to queue for
+it.
+
+DON'T FORGET TO USE AN EXPLICIT CALL TO 'print()' TO PRINT OUT THAT
+PROPORTION.  
+
+Add the following to the code:
+
+source('DES.R')
+mrp(5,1,10000,6,2)  # new output about 0.78 or 0.79
+
+QUESTION -ext .R -run 'Rscript omsi_answer4.R'
+
+Change the model slightly for MachRep.R, as follows:  When a repair is
+complete, and no queued jobs are waiting for service, that repairperson
+takes a coffee break, lasting 0.1 unit of time.  During that time, any
+jobs newly joining the queue will wait.
+
+This question is independent of Question 3.  Do NOT include your code
+modifications for that question here.
+
+Add the following to the code:
+
+source('DES.R')
+mrp(5,1,10000,4,2)
+

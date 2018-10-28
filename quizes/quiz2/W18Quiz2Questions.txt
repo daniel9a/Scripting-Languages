@@ -1,0 +1,73 @@
+
+
+DESCRIPTION
+
+Students:  Please keep in mind the OMSI rules.  Save your files often,
+make sure OMSI fills your entire screen at all times, etc.  Remember
+that clicking CopyQtoA will copy the entire question box to the answer
+box.
+
+In questions involving code which will PARTIALLY be provided to you in
+the question specs, you may need add new lines.  There may not be
+information given as to where the lines should be inserted.  Do not
+change any of the provided code.
+
+MAKE SURE TO RUN THE CODE IN PROBLEMS THAT INVOLVING CODE!
+
+QUESTION -ext .py -run 'python omsi_answer1.py'
+
+Here you will write a class to store (grayscale) images.
+
+An image consists of a two-dimensional array imgRows of pixel values,
+with the [i][j] element being the brightness of the pixel in row i,
+column j of the image.  Brightness will be a range of values is 0-k, in
+order of increasing brightness.  There will be nPixRow pixels per row.
+
+Actions upon instantiation: 
+
+1.  An instance variable Rows will be formed, a copy of imgRows.
+
+2.  Two instance variables will be formed, nRows and nCols, storing the
+number of rows and columns in the image.
+
+3.  An instance variable errRows will be formed, a boolean list
+indicating rows whose length is not nPixRow.  
+
+4.  Aninstance variable, nBad, will contain the number of offending
+rows.
+
+5.  An instance variable imgRowMajor will be formed, containing the 
+pixel values as a one dimensional array, stored row-by-row; if nBad > 0,
+this variable will have the value None.
+
+5.  An instance variable hist will be formed, a list of length k+1
+containing the counts of each brightness level, i.e. how many pixels
+have brightness 0, how many have brightness 1 and so on.  If  nBad > 0,
+this variable will have the value None.
+
+Complete the code below.  FOR FULL CREDIT, USE NO LOOPS.  (List
+comprensions do count as loops.)
+
+class img():
+   def __init__(self,imgRows,nPixRow,k):
+      self.Rows = imgRows
+      self.nCols = nPixRow
+      self.nRows =
+      self.errRows = 
+      self.nBad = 
+      if self.nBad == 0:
+         self.imgRowMajor = 
+         self.hist = 
+      else:
+         self.imgRowMajor = None
+         self.hist = None
+
+pixels1 = [[2,0],[1,3],[1,1]]
+img1 = img(pixels1,2,3)
+print img1.imgRowMajor  # prints [2,0,1,3,1,1]
+print img1.hist  # prints [1,3,1,1]
+pixels2 = [[2,0,5],[1,3],[1,1]]
+img2 = img(pixels2,2,3)
+print img2.errRows  # prints [True,False,False]
+print img2.imgRowMajor  # prints None
+print img2.hist  # prints None
